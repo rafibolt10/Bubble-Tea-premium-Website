@@ -330,10 +330,24 @@ transform:translateY(0px);
 
     left:450px;
 
-    animation: floatTea 4s ease-in-out infinite;
-
+    /* animation: floatTea 4s ease-in-out infinite; */
+    animation-name: reveal;
+    /* animation-duration: 10s; */
+    animation-timeline: view();
+    animation-range: entry 0% cover 80%;
+    animation-fill-mode: both;   
 }
-
+ 
+@keyframes reveal{
+    from{
+        opacity:0;
+        transform:translateY(200px) scaleX(0.8);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
 @keyframes floatTea{
 
 0%,100%{
@@ -351,28 +365,13 @@ transform:translateY(-20px);
 }
 .frame2left-container h1{
 
-    animation:slideLeft 1s ease;
-
+    animation:slideLeft;
+    /* animation-duration: 10s; */
+    animation-timeline: view();
+    animation-range: entry 0% cover 80%;
+    animation-fill-mode: both;   
 }
-@keyframes slideLeft{
 
-    from{
-    
-    opacity:0;
-    
-    transform:translateX(-120px);
-    
-    }
-    
-    to{
-    
-    opacity:1;
-    
-    transform:translateX(0);
-    
-    }
-    
-    }
     .frame2left-container h2{
 
         animation:fadeUp 1.4s ease;
@@ -414,7 +413,32 @@ gap: 30px;
 position: absolute;
 left: 100px;
 top: 100px;
+animation:slideLeft;
+/* animation-duration: 10s; */
+animation-timeline: view();
+animation-range: entry 0% cover 80%;
+animation-fill-mode: both;  
 }
+@keyframes slideLeft{
+
+    from{
+    
+    opacity:0;
+    
+    transform:translateX(-120px);
+    
+    }
+    
+    to{
+    
+    opacity:1;
+    
+    transform:translateX(0);
+    
+    }
+    
+    }
+
 .frame2left-container h1{
     font-size: 60px;
 }
@@ -456,6 +480,7 @@ top: 100px;
     border-radius:25px;
     padding:15px;
 }
+
 .card img{
     height: 150px;
     width: 350px;
@@ -468,6 +493,7 @@ top: 100px;
     z-index: 15;
     position: absolute;
     top: 200px;
+    
 }
 .card2{
     z-index: 14;
@@ -475,6 +501,16 @@ top: 100px;
     top: 300px;
     left: 50px;
     transform: rotateZ(-10deg);
+    animation:card2;
+    animation-timeline: view();
+    animation-range: entry 0% cover 60%;
+    animation-fill-mode: both;   
+}
+@keyframes card2{
+    from{ top: 200px;}
+    to{ top: 300px;
+        left: 50px;
+        transform: rotateZ(-10deg);}
 }
 .card3{
     z-index: 13;
@@ -482,6 +518,17 @@ top: 100px;
     top: 70px;
     left: 100px;
     transform: rotateZ(5deg);
+    animation:card3;
+    animation-timeline: view();
+    animation-range: entry 0% cover 60%;
+    animation-fill-mode: both;   
+}
+@keyframes card3{
+    from{ top: 200px;
+        transform: rotateZ(0deg); }
+    to{ top: 70px;
+        left: 100px;
+        transform: rotateZ(5deg)}
 }
 .card4{
     z-index: 12;
@@ -489,14 +536,38 @@ top: 100px;
     top: 380px;
     left: 200px;
     transform: rotateZ(-10deg);
+    animation:card4;
+    animation-timeline: view();
+    animation-range: entry 0% cover 60%;
+    animation-fill-mode: both; 
 }
+@keyframes card4{
+    from{ top: 200px;
+        transform: rotateZ(0deg); }
+    to{  top: 380px;
+        left: 200px;
+        transform: rotateZ(-10deg);}
+}
+
 .card5{
     z-index: 11;
     position: absolute;
     top: 30px;
     left: 200px;
     transform: rotateZ(10deg);
+    animation:card5;
+    animation-timeline: view();
+    animation-range: entry 0% cover 60%;
+    animation-fill-mode: both;
 }
+@keyframes card5{
+    from{ top: 200px;
+        transform: rotateZ(0deg); }
+    to{     top: 30px;
+        left: 200px;
+        transform: rotateZ(10deg);}
+}
+
 .tag{
     position:absolute;
     bottom:0;
@@ -531,6 +602,11 @@ top: 100px;
 }
 .page3heading h1{
     font-size: 45px;
+    animation:slideLeft;
+/* animation-duration: 10s; */
+animation-timeline: view();
+animation-range: entry 0% cover 100%;
+animation-fill-mode: both;  
 }
 .page3heading h1 span{
     color: #8B5A3C;
@@ -546,6 +622,10 @@ top: 100px;
     height: 100vh;
     width: 100%;
     position: relative;
+    animation: visibleeffect;
+    animation-timeline: view();
+animation-range: entry 0% cover 60%;
+animation-fill-mode: both; 
 }
 .threeDbar{
         position:absolute;
@@ -572,6 +652,11 @@ font-size: 10px;
     position: absolute;
     top:20px;
     left:500px;
+    
+}
+@keyframes visibleeffect{
+    from{opacity: 0;}
+    to{opacity: 1;}
 }
 .textcard2{
     position: absolute;
@@ -617,9 +702,19 @@ font-size: 10px;
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
+    animation:fruits;
+    /* animation-duration: 10s; */
+    animation-timeline: view();
+    animation-range: entry 0% cover 60%;
+    animation-fill-mode: both; 
 }
 .top-containerf4 img{
     height: 130px;
+   
+}
+@keyframes fruits{
+    from{width: 100%;}
+    to{width: 80%;}
 }
 .F4heading{
     display: flex;
@@ -695,6 +790,15 @@ font-size: 10px;
     height: 550px;
     position: absolute;
     z-index: 0;
+    animation: coffeebg;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+    animation-fill-mode: both; 
+}
+@keyframes coffeebg{
+    from{left: -60px;
+    transform: rotateZ(-180deg);}
+    to{left: 0px;}
 }
 .f5butterimgbg{
     height: 250px;
@@ -1172,6 +1276,7 @@ text-decoration-line: underline;
     display:flex;
     flex-direction:column;
     gap:25px;
+    transform:none !important;
 }
 
 /* All Cards */
@@ -1183,6 +1288,7 @@ text-decoration-line: underline;
     top:0;
     transform:none !important;
     border-radius:20px;
+    transform:none !important;
 }
 
 /* Remove Desktop Position */
@@ -1218,7 +1324,14 @@ text-decoration-line: underline;
     font-size:14px;
     line-height:22px;
 }
+.card1,
+.card2,
+.card3,
+.card4,
+.card5{
 
+    animation:none !important;
+}
 /* Tag */
 
 .tag{
@@ -1232,14 +1345,15 @@ text-decoration-line: underline;
 /* Hover */
 
 .card:hover{
-    transform:translateY(-8px) !important;
+    /* transform:translateY(-8px) !important; */
+    translate:0 -8px;
 }
 
 .frame3{
 
-    height:auto;
+    height:400px;
     width:100%;
-    padding:50px 20px;
+    padding:40px 20px;
     position:relative;
     overflow:hidden;
 
@@ -1300,7 +1414,7 @@ text-decoration-line: underline;
 
 .threeDbar-container{
 
-    position:static;
+    position:relative;
 
     display:flex;
 
@@ -1313,10 +1427,31 @@ text-decoration-line: underline;
     width:100%;
 
     height:auto;
+    animation:none !important;
+    opacity:1 !important;
 
 }
 
 /* Remove Desktop Position */
+
+.threeDbar{
+    position:absolute;
+    width:130px;
+    background:white;
+    padding:10px;
+    border-radius:50px;
+    border:1px solid #d6b7a4;
+    font-size:8px;
+    font-weight:600;
+    color:#3a2418;
+    box-shadow:-2px -2px rgb(228,181,151),
+               inset 2px 2px 4px rgb(228,181,151);
+    display:flex;
+    align-items:center;
+    gap:12px;
+    animation:none !important;
+    opacity:1 !important;
+}
 
 .textcard1,
 .textcard2,
@@ -1325,16 +1460,46 @@ text-decoration-line: underline;
 .textcard5,
 .textcard6,
 .textcard7{
-
-    position:static;
-
+  opacity:1 !important;
+    visibility:visible !important;
 }
-
-/* 3D Card */
-
-.threeDbar{
-display: none;
-
+.fa-diamond{
+font-size: 5px;
+}
+.textcard1{
+    position: absolute;
+    top:150px;
+    left:200px;
+}
+.textcard2{
+    position: absolute;
+    top:200px;
+    left:280px;
+}
+.textcard3{
+    position: absolute;
+    top:200px;
+    left:50px;
+}
+.textcard4{
+    position: absolute;
+    top:300px;
+    left:300px;
+}
+.textcard5{
+    position: absolute;
+    top:400px;
+    left:950px;
+}
+.textcard6{
+    position: absolute;
+    top:300px;
+    left:50px;
+}
+.textcard7{
+    position: absolute;
+    top:350px;
+    left:150px;
 }
 
 .frame4{
@@ -1462,9 +1627,7 @@ display: none;
 
 .image2{
 
-    height:450px;
-
-    margin-top:180px;
+    height:350px;
 
 }
 
